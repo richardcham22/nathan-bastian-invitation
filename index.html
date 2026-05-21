@@ -19,7 +19,10 @@
     --paper:#fbf8f0;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{
+    scroll-behavior:smooth;
+    scroll-snap-type:y proximity;
+  }
   body{
     font-family:'Montserrat',sans-serif;
     color:var(--ink);
@@ -38,6 +41,12 @@
     position:relative;
     padding:80px 24px;
     overflow:hidden;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    scroll-snap-align:center;
+    scroll-snap-stop:always;
   }
   .card{
     max-width:680px;margin:0 auto;
@@ -246,7 +255,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="eyebrow">Con mucha alegría te invitamos</div>
-  <h1>Nathan<br/><span class="amp">&amp;</span>Bastian</h1>
+  <h1>Nathan<br/>Bastian</h1>
   <div class="photo-frame reveal">
     <img src="1.jpeg" alt="Nathan Bastian" />
   </div>

@@ -19,21 +19,16 @@
     --paper:#fbf8f0;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{
-    height:100%;
-  }
   html{
     scroll-behavior:smooth;
+    scroll-snap-type:y mandatory;
+    overflow-x:hidden;
   }
   body{
     font-family:'Montserrat',sans-serif;
     color:var(--ink);
     background:var(--cream);
     line-height:1.6;
-    overflow-x:hidden;
-    overflow-y:scroll;
-    scroll-snap-type:y mandatory;
-    height:100vh;
   }
   h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.02em}
   .script{font-family:'Dancing Script',cursive;color:var(--gold);font-weight:600}
@@ -405,7 +400,7 @@
   // Reveal on scroll
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-  },{root:document.body,threshold:.15});
+  },{threshold:.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
